@@ -1,0 +1,9 @@
+.div1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em;
+}
+
+.div2 {
+    float:left;
+}
