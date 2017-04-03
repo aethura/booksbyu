@@ -123,7 +123,7 @@ else {
     </div>
     <div class="span-18">
         <div class="success">
-            User successfully registered. <a href="signup.php">Login</a>.
+            User successfully registered. <a href="Login.php">Login</a>.
         </div>
     </div>
     <div class="span-3 last">
