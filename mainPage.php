@@ -5,6 +5,13 @@
  * Date: 2/16/2017
  * Time: 2:19 PM
  */
+include('database.php');
+
+$sql = "SELECT * FROM listing ORDER BY listingID DESC";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$listing = $stmt->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +26,9 @@
     <input class="button" type = "submit" value="Post" onClick="location.href='post.php'" title="Post"/>
     </form>
 
-<form action="" method="post">
 
 
-        <div class="div1">
+<form>
     <select>
         <option value="Categories">Categories</option>
         <option value="Accounting">Accounting</option>
@@ -53,17 +59,21 @@
              <br>
              <input type="text" value="zip" name="zip"> <br>
     </div>
-
-    <a href=""> <img src="" alt="img" style="width:304px;height:228px;"> </a>
-    <a href=""> <img src="" alt="img" style="width:304px;height:228px;"> </a>
-    <a href=""> <img src="" alt="img" style="width:304px;height:228px;"> </a>
-
-
-
-
-
 </form>
 
-</form>
+<b><u>MOST RECENT POSTS</u></b><br>
+
+    <?php foreach ($listing as $listings) : ?>
+
+        <a href="<?php echo "hi" ?>">
+                <?php echo $listings['description']; ?> </a> <br>
+    <?php endforeach; ?>
+
+    </form>
+
 </body>
 </html>
+
+
+
+

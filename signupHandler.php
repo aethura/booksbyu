@@ -45,7 +45,6 @@ if (!preg_match('/^[a-zA-Z0-9]{4,10}$/',$userName))
 {
     $error = 2;
     header('location:signup.php?error='.$error);
-
 }
 
 ///////////////////PASSWORD//////////////////////
@@ -123,7 +122,7 @@ else {
     </div>
     <div class="span-18">
         <div class="success">
-            User successfully registered. <a href="login.php">Login</a>.
+            User successfully registered. <a href="signup.php">Login</a>.
         </div>
     </div>
     <div class="span-3 last">
