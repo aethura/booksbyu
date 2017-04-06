@@ -52,6 +52,5 @@ $stmt->bindParam(':condition', $condition);
 $stmt->bindParam(':contact', $contact);
 $stmt->bindParam(':file', $file);
 $stmt->execute();
-header('location: mainPage.php');
 
 ?>

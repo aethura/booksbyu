@@ -5,16 +5,22 @@
  * Date: 3/29/2017
  * Time: 2:55 PM
  */
+include('database.php');
+
+$sql = "SELECT * FROM department";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$department = $stmt->fetchAll();
+
 
 ?>
 <html>
 
+
+
 <form action="listingHandler.php" method="post">
 
-
-Category/Subject: <select name="Category">
-    <option value="Computer Science">Computer Science</option>
-</select><br><br>
+Category/Subject: <select name="Category"><?php foreach($department as $departments){ ?><option value="<?php echo $departments['name'];?>"><?php echo($departments['name']); }?></option></select><br>
 
 Book Title: <input type = "text" value ="Book Title" name = "title"><br><br>
 

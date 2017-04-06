@@ -124,7 +124,7 @@ if ($error == NULL || $error == FALSE) {
                     </p>
 
                     <p>
-                        <input type="submit" value="Submit">
+]]
                         <input type="reset" value="Reset">
                     </p>
 
