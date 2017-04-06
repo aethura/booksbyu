@@ -14,13 +14,53 @@ $department = $stmt2->fetchAll();
 
 echo "Today is " . date("m/d") . "<br>";
 
-$min = $_GET['min'];
-$max = $_GET['max'];
-$condition = $_GET['condition'];
-$zip = $_GET['zip'];
-$view = $_GET['view'];
-$category = $_GET['category'];
-
+if (isset($_GET['min'])){
+    $min = $_GET['min'];
+    }
+    else
+    {
+        $min = NULL;
+    }
+///////////////////////////////
+if (isset($_GET['max'])){
+    $max = $_GET['max'];
+    }
+    else
+    {
+      $max = NULL;
+    }
+//////////////////////////////////
+if (isset($_GET['condition'])){
+    $condition = $_GET['condition'];
+    }
+    else
+    {
+        $condition = NULL;
+    }
+//////////////////////////////////
+if (isset($_GET['zip'])){
+    $zip = $_GET['zip'];
+    }
+    else
+    {
+        $zip = NULL;
+    }
+///////////////////////////////////
+if (isset($_GET['category'])){
+    $category = $_GET['category'];
+    }
+    else
+    {
+     $category = NULL;
+    }
+///////////////////////////////////
+if (isset($_GET['view'])){
+    $view = $_GET['view'];
+}
+else
+{
+    $view = NULL;
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,9 +101,6 @@ $category = $_GET['category'];
              <input type="radio" name="condition" value="new">New<br>
              <input type="radio" name="condition" value="used">Used<br>
 
-         <u>Distance</u>
-             <br>
-             <input type="text" value="zip" name="zip"> <br>
 
              <input type="submit" value="Apply Filters">
     </div>
@@ -76,21 +113,72 @@ $category = $_GET['category'];
 <?php
 ///////////////////////Apply different SQL statements based off of what the user wants to filter the listings by////////////////////////////
 
+     $line = "SELECT * FROM listing";
 
- if($category != 'Categories')   //Filter if the user enters a different department
- {
-     $sql = "SELECT * FROM listing WHERE department='".$category."' ORDER BY listingID DESC";
-     $stmt = $conn->prepare($sql);
+     $first = TRUE;
+     if ($category != 'Categories' && $category != NULL) {
+         if ($first) {
+             $first = FALSE;
+             $line = $line . " WHERE";
+         } else {
+             $line = $line . " AND ";
+         }
+         $line = $line . " department = '" . $category . "'";
+     }
+
+     if ($condition != "") {
+         if ($first) {
+             $first = FALSE;
+             $line = $line . " WHERE";
+         } else {
+             $line = $line . " AND ";
+         }
+         $line = $line . " status = '" . $condition . "'";
+     }
+
+    if(($min != 'min' && $max == 'max') && ($min != NULL && $max != NULL)){
+        if ($first) {
+            $first = FALSE;
+            $line = $line . " WHERE";
+        } else {
+            $line = $line . " AND ";
+        }
+        $line = $line . " price >= '" . $min . "'";
+    }
+
+    if(($max != 'max' && $min == 'min') && ($min != NULL && $max != NULL)){
+        if ($first) {
+            $first = FALSE;
+            $line = $line . " WHERE";
+        } else {
+            $line = $line . " AND ";
+        }
+        $line = $line . " price <= '" . $max . "'";
+    }
+
+    if(($max != 'max' && $min != 'min') && ($min != NULL && $max != NULL)){
+        if ($first) {
+            $first = FALSE;
+            $line = $line . " WHERE";
+        } else {
+            $line = $line . " AND ";
+        }
+        $line = $line . " price <= '" . $max . "'" . " AND " . " price >= '" . $min . "'";
+    }
+
+    if($min == 'min' && $max == 'max' && $condition == '' && $zip == '' && $category == 'Categories')
+    {
+     $line = "SELECT * FROM listing ORDER BY listingID DESC";
+    }
+
+    if($line == "SELECT * FROM listing")
+    {
+        $line = $line . " ORDER BY listingID DESC ";
+    }
+
+     $stmt = $conn->prepare($line);
      $stmt->execute();
      $listing = $stmt->fetchAll();
- }
- else  //Displays all the posts by the most recent without any filters
- {
-     $sql = "SELECT * FROM listing ORDER BY listingID DESC";
-     $stmt = $conn->prepare($sql);
-     $stmt->execute();
-     $listing = $stmt->fetchAll();
- }
 
 ?>
 
