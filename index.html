@@ -2,26 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Books 4 U</title>
+    <meta http-equiv="x-ua-compatible" content="IE-edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="author" content>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/searchFilter.css">
+    <link rel="stylesheet" href="fonts">
+
+    <title>Books By U</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" href="css/loginCSS.css">
 </head>
+
 <body>
-<form action="login.php" method="post">
-    <img src="" alt="banner" style="width:400px;height:200px;">
-    <br>
-    <br>
+<nav class="navbar navbar-inverse" role="navigation" style="background-color:#00703C">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+           <a class="navbar-brand" style="margin-left:500px; color:#ffffff">Books By U </a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                      <!--  <a href="signup.php" style="margin-left:1025px; color:#ffffff">Sign Up</a>  -->
 
-    <h1>Sign In</h1>
+                        <a href="signup.php" style="margin-left:1025px; color:#ffffff" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
 
-    Email: <input type = "text" value ="" name = "email">  <br>
-    Password: <input type = "text" value ="" name = "password">
-    <br>
+<div class="container">
+    <!--PLACEHOLDER FOR BANNER LOGO -->
+   <center> <div class="row">
 
-    <input class="button" type = "submit" onClick="location.href='display_result.php'" title="Submit Answers"/>
+    </div></center>
+    <!--  -->
 
-</form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+               <center><img src=""></center>
+                <p class="form-title">
+                    Sign In</p>
+                <form action="login.php" method="post" class="login">
+                    <input type = "text" value ="" placeholder="UNCC Email"name = "email">
+                    <input type = "password" value ="" placeholder="Password"name = "password">
+                    <input type="submit" value="Sign In" class="btn btn-success btn-sm" /><span class="glyphicon glyphicon-ok-sign"></span>
 
-<a href="signup.php">New User? Sign up here</a>
 
-</form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
