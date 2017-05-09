@@ -18,12 +18,14 @@ $condition = $_POST['condition'];
 $contact = $_POST['contact'];
 $ID = $_POST['ID'];
 $image = $_POST['fileToUpload'];
+
+
 $email = $_SESSION['email'];
 $date = date("m/d");
 
-$sql = "UPDATE listing SET department='$category', title='$bookTitle', author='$author', price='$price', isbn='$isbn', description='$description', status='$status', contact='$contact', image='$image', user='$email', date='$date' WHERE listingID = $ID";
+$sql = "UPDATE listing SET department='$category', title='$bookTitle', author='$author', price='$price', isbn='$isbn', description='$description', status='$condition', contact='$contact', image='$image', user='$email', date='$date' WHERE listingID = $ID";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-header('Location: account.php');
+//header('Location: account.php');
 
 ?>

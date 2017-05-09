@@ -79,8 +79,6 @@ else{
     $file = $_SESSION['image'];
 }
 
-
-
 $email = $_SESSION['email'];
 
 $date = date("m/d");
@@ -93,7 +91,8 @@ echo $isbn;
 echo $description;
 echo $condition;
 echo $contact;
-echo $file;
+echo "<br>";
+echo " FILE: ". $file;
 echo $email;
 echo $date;
 

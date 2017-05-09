@@ -75,7 +75,7 @@ $email = $_SESSION['email'];
                             <div class="panel-body">
                                 <b>Author:</b> <?php echo $listings['author']?><br>
                                 <b>ISBN:</b> <?php echo $listings['isbn']?><br>
-                                <b>Status:</b> <?php echo $listings['status']?>
+                                <b>Condition:</b> <?php echo $listings['status']?>
                             </div>
                         </div>
                         <div class="panel panel-border panel-default">

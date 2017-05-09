@@ -74,5 +74,5 @@ else {
     $stmt->execute();
 }
 
-//header('location:index.html');
+header('location:index.html');
 ?>

@@ -132,6 +132,7 @@ if($_SESSION['logged_in'] != 1)
             <div class="form-group">
                 <label for="title">Select image to upload <span class="require"></span></label>
                 <input type="file" class="btn btn-primary" name="fileToUpload" id="fileToUpload" style="background-color: #00703C; color:#ffffff" />
+                <input type="hidden" name="ID" value="<?php echo $listingID;?>">
             </div>
 
             <div class="form-group">

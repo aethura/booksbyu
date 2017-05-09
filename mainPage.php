@@ -239,7 +239,7 @@ if ($search != "") {
         $first = FALSE;
         $line = $line . " WHERE";
 
-        $lastChar = substr($search, -1);
+        $lastChar = substr($search, 0);
         $stringToInt = (int)$lastChar;
 
         if($stringToInt == 0){
@@ -247,6 +247,11 @@ if ($search != "") {
         }
         else{
             $line = $line . " isbn = '" . $search . "'";
+            $tok = strtok($search, "-");
+            while($tok !== false){
+               // echo $tok;
+                $tok = strtok("-");
+            }
         }
     }
     else {
