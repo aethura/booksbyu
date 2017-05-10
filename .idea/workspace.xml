@@ -81,7 +81,7 @@
       <file leaf-file-name="signupHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/signupHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="1207">
               <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
               <folding>
                 <marker date="1494301098448" expanded="true" signature="345:364" ph="SELECT * FRO... users" />
@@ -288,15 +288,15 @@
       <workItem from="1491513968874" duration="1214000" />
       <workItem from="1491773507723" duration="1200000" />
       <workItem from="1492622457301" duration="52893000" />
-      <workItem from="1493735810826" duration="54442000" />
+      <workItem from="1493735810826" duration="54691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156809000" />
+    <option name="totallyTimeSpent" value="157058000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="250" y="0" width="1108" height="735" extended-state="1" />
+    <frame x="250" y="0" width="1108" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -718,7 +718,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/signupHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="1207">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <marker date="1494301098448" expanded="true" signature="345:364" ph="SELECT * FRO... users" />
