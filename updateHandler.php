@@ -66,6 +66,6 @@ $sql = "UPDATE listing SET department='$category', title='$bookTitle', author='$
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 unset($_SESSION['image']);
-//header('Location: account.php');
+header('Location: account.php');
 
 ?>
